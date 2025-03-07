@@ -5,8 +5,6 @@ import io.cucumber.java.pt.Entao;
 import io.cucumber.java.pt.Quando;
 import pageObject.TelaInicialPage;
 
-import javax.lang.model.type.ErrorType;
-
 public class DesafioCBStep {
 
 
@@ -18,7 +16,7 @@ public class DesafioCBStep {
     }
 
     @Quando("selecionar um prato")
-    public void selecionarUmPrato() {
+    public void selecionarUmPrato() throws InterruptedException {
         tp.clicarBotaoPrato();
     }
     @Quando("digitar uma observacao {string}")
