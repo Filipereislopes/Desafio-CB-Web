@@ -10,7 +10,7 @@ Funcionalidade: realizar Tres fluxos do desafio CB
   @CT_001_adicionarNoCarrinho
   Cenario: CT - 001 - Adicionar no carrinho
     Quando selecionar um prato
-    E digitar uma observacao "Com muito camarao!"
+    E digitar uma observacao "Com muito camarao! hehe"
     E clicar no botao adicionar
     Entao o sistema apresenta a saco com o prato selecionado
 
@@ -27,6 +27,7 @@ Funcionalidade: realizar Tres fluxos do desafio CB
   @CT_003_finalizarCompra
   Cenario: CT - 003 - Finalizar Compra
     Quando o usuario adicionar um prato na sacola
+    E clicar no botao
 
 
 

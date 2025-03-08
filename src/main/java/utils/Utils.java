@@ -1,12 +1,11 @@
 package utils;
 
-import java.util.concurrent.TimeUnit;
 
-import org.openqa.selenium.WebDriver;
+import java.util.concurrent.TimeUnit;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.support.PageFactory;
-
+import org.openqa.selenium.interactions.Actions;
 
 public class Utils {
 
@@ -22,13 +21,5 @@ public class Utils {
         driver.get("https://app-hom.cocobambu.com/delivery");
     }
 
-    public static <T> T instanciarClasse(Class<T> classe) {
-        return PageFactory.initElements(driver, classe);
-    }
-
-//    public static void capturarTela(Scenario scenario) {
-//        final byte[] screenshot = ((TakesScreenshot)driver).getScreenshotAs(OutputType.BYTES);
-//        scenario.embed(screenshot, "image/png");
-//    }
 }
 
