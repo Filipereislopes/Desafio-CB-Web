@@ -1,11 +1,10 @@
 package utils;
 
 
-import java.util.concurrent.TimeUnit;
+import java.time.Duration;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.interactions.Actions;
 
 public class Utils {
 
@@ -17,8 +16,12 @@ public class Utils {
         chromeOptions.addArguments("--window-size=1920,1080");
         driver = new ChromeDriver(chromeOptions);
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         driver.get("https://app-hom.cocobambu.com/delivery");
+    }
+
+    public static void esperaElemento(int tempo) throws InterruptedException {
+        Thread.sleep(tempo);
     }
 
 }

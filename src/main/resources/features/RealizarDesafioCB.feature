@@ -18,7 +18,7 @@ Funcionalidade: realizar Tres fluxos do desafio CB
   @CT_002_adicionarMeioDePagamento
   Cenario: CT - 002 - Adionar meio de pagamento
     Quando o usuario adicionar um prato na sacola
-    E clicar no botao selecionar pagamento
+    E clicar no botao selecionar forma de pagamento
     E clicar no botao adicionar novo cartao
     E preencher os campos do cartao
     E clicar em salvar
@@ -27,7 +27,12 @@ Funcionalidade: realizar Tres fluxos do desafio CB
   @CT_003_finalizarCompra
   Cenario: CT - 003 - Finalizar Compra
     Quando o usuario adicionar um prato na sacola
-    E clicar no botao
+    E clicar no botao selecionar forma de pagamento
+    E clicar no botao de pagamento na entraga
+    E clicar no tipo cartao
+    E clicar em confirmar pedido
+    E clicar em confirmar e fazer pedido
+    Entao o sistema realiza pedido
 
 
 

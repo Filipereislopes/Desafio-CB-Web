@@ -23,12 +23,10 @@ public class TelaLoginPage {
     public void fazerLogin() throws InterruptedException {
         Utils.driver.findElement(botaoPerfilXpath).click();
         Utils.driver.findElement(botaoEntrarXpath).click();
-        Utils.driver.findElement(campoEmailXpath).click();
         Utils.driver.findElement(campoEmailXpath).sendKeys("testefilipeqa@gmail.com");
-        Utils.driver.findElement(campoSenhaXpath).click();
         Utils.driver.findElement(campoSenhaXpath).sendKeys("desafioCB#1");
         Utils.driver.findElement(botaoEntrarLoginXpath).click();
-        Thread.sleep(3000);
+        Utils.esperaElemento(2500);
         Utils.driver.findElement(botaoFecharMensagemXpath).click();
         Utils.driver.findElement(campoCodigoVerificacao1Xpath).sendKeys("A");
         Utils.driver.findElement(campoCodigoVerificacao2Xpath).sendKeys("A");
@@ -37,7 +35,7 @@ public class TelaLoginPage {
         Utils.driver.findElement(campoCodigoVerificacao5Xpath).sendKeys("A");
         Utils.driver.findElement(campoCodigoVerificacao6Xpath).sendKeys("A");
         Utils.driver.findElement(botaoAcessarXpath).click();
-        Thread.sleep(3000);
+        Utils.esperaElemento(2500);
         if (Utils.driver.findElement(botaoNaoAlterarLocalizacaoXpath).isDisplayed()){
             Utils.driver.findElement(botaoNaoAlterarLocalizacaoXpath).click();
         }

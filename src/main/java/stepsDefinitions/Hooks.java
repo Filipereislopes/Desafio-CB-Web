@@ -4,17 +4,16 @@ import static utils.Utils.*;
 import static utils.Utils.driver;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
-import utils.Utils;
 
 public class Hooks {
 
         @Before()
-        public void EntrarNoSiyte() {
+        public void EntrarNoSite() {
             acessarSistema();
         }
 
         @After
-        public void tearDown() {
+        public void finalizarTeste() {
             driver.quit();
         }
 

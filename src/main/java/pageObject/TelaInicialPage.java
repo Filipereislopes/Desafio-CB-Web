@@ -3,9 +3,6 @@ package pageObject;
 import org.openqa.selenium.By;
 import utils.Utils;
 
-import static org.junit.Assert.assertTrue;
-
-
 public class TelaInicialPage {
 
 

@@ -14,7 +14,18 @@ public class TelaTipoPagamentoPage {
     By campoCPFCartaoXpath= By.xpath("//input[@id='cpfCnpj']");
     By botaoSalvarNovoCartaoXpath= By.xpath("//button[contains(.,'SALVAR')]");
     By verificacaoCartaoXpath= By.xpath("//span[contains(.,'Padrão')]");
+    By botaoPagNaEntregaXpath= By.xpath("//ion-segment-button[contains(.,'NA ENTREGA')]");
+    By tipoPagTicketXpath= By.xpath("//payment-types-item[contains(.,'Ticket Refeição')]");
 
+    public void clicarCartaoTicket(){
+        Utils.driver.findElement(tipoPagTicketXpath).click();
+    }
+
+    public void clicarPagNaEntrega() throws InterruptedException {
+        Utils.esperaElemento(1000);
+        Utils.driver.findElement(botaoPagNaEntregaXpath).click();
+
+    }
     public void preencherNovoCartao(){
         Utils.driver.findElement(campoNumeroCartaoXpath).sendKeys("5566954754080284");
         Utils.driver.findElement(campoDataCartaoXpath).sendKeys("0826");

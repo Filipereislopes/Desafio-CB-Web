@@ -1,6 +1,7 @@
 package stepsDefinitions;
 
 import io.cucumber.java.pt.Dado;
+import io.cucumber.java.pt.E;
 import io.cucumber.java.pt.Entao;
 import io.cucumber.java.pt.Quando;
 import pageObject.TelaInicialPage;
@@ -8,10 +9,7 @@ import pageObject.TelaLoginPage;
 import pageObject.TelaPedidoPage;
 import pageObject.TelaTipoPagamentoPage;
 
-import java.awt.*;
-
 public class DesafioCBStep {
-
 
     TelaInicialPage ti = new TelaInicialPage();
     TelaLoginPage tl = new TelaLoginPage();
@@ -24,7 +22,7 @@ public class DesafioCBStep {
     }
 
     @Quando("selecionar um prato")
-    public void selecionarUmPrato() {
+    public void selecionarUmPrato(){
         ti.clicarBotaoPrato();
     }
 
@@ -49,12 +47,12 @@ public class DesafioCBStep {
     }
 
     @Quando("clicar no botao selecionar pagamento")
-    public void clicarNoBotaoSelecionarPagamento() throws InterruptedException {
+    public void clicarNoBotaoSelecionarPagamento(){
         tp.clicarBotaoTipoPagemento();
     }
 
     @Quando("clicar no botao adicionar novo cartao")
-    public void clicarNoBotaoAdicionarNovoCartao() {
+    public void clicarNoBotaoAdicionarNovoCartao() throws InterruptedException {
         tp.clicarNovoCartao();
     }
 
@@ -74,4 +72,33 @@ public class DesafioCBStep {
     }
 
 
+    @E("clicar no botao selecionar forma de pagamento")
+    public void clicarNoBotaoSelecionarFormaDePagamento() throws InterruptedException {
+        tp.clicarConfirmarPedido();
+    }
+
+    @E("clicar em confirmar pedido")
+    public void clicarEmConfirmarPedido() throws InterruptedException {
+        tp.clicarConfirmarPedido();
+    }
+
+    @E("clicar em confirmar e fazer pedido")
+    public void clicarEmConfirmarEFazerPedido() throws InterruptedException {
+        tp.clicarConfirmarfazerPedido();
+    }
+
+    @Entao("o sistema realiza pedido")
+    public void oSistemaRealizaPedido() {
+        tp.confirmacaoPedidoRealizado();
+    }
+
+    @E("clicar no botao de pagamento na entraga")
+    public void clicarNoBotaoDePagamentoNaEntraga() throws InterruptedException {
+        ttp.clicarPagNaEntrega();
+    }
+
+    @E("clicar no tipo cartao")
+    public void clicarNoTipoCartao() {
+        ttp.clicarCartaoTicket();
+    }
 }
