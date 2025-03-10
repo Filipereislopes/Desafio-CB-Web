@@ -1,7 +1,8 @@
 package utils;
 
-
+import java.io.File;
 import java.time.Duration;
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -22,6 +23,23 @@ public class Utils {
 
     public static void esperaElemento(int tempo) throws InterruptedException {
         Thread.sleep(tempo);
+    }
+
+    public static void captureElementScreenshot(WebDriver driver, String screenshotName){
+        try {
+            esperaElemento(1000);
+            File source = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+            String destination = System.getProperty("user.dir") +
+                    "/screenshots/" +
+                    screenshotName + "_" +
+                    System.currentTimeMillis() +
+                    ".png";
+
+            FileUtils.copyFile(source, new File(destination));
+            System.out.println("Screenshot da última tela salva em: " + destination);
+        } catch (Exception e) {
+            System.out.println("Erro ao capturar screenshot: " + e.getMessage());
+        }
     }
 
 }

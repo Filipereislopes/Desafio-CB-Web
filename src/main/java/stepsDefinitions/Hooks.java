@@ -14,6 +14,7 @@ public class Hooks {
 
         @After
         public void finalizarTeste() {
+            captureElementScreenshot(driver,"PrintTela");
             driver.quit();
         }
 

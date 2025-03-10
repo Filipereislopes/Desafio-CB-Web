@@ -6,7 +6,7 @@
 
     <groupId>DesafioCB</groupId>
     <artifactId>Desafio_CB_Web</artifactId>
-    <version>0.0.4-SNAPSHOT</version>
+    <version>0.0.5-SNAPSHOT</version>
 
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
@@ -64,6 +64,11 @@
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-devtools-v133</artifactId>
             <version>4.29.0</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>2.15.1</version>
         </dependency>
     </dependencies>
 
