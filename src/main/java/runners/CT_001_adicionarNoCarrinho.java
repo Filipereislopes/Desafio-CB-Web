@@ -11,7 +11,7 @@ import io.cucumber.junit.CucumberOptions.SnippetType;
         plugin = {"pretty","html:target/cucumber-report"},
         features ="classpath:features/",
         glue = {"stepsDefinitions"},
-        tags = "@DesafioCB",
+        tags = "@CT_001_adicionarNoCarrinho",
         snippets = SnippetType.CAMELCASE,
         monochrome = true,
         dryRun = false
