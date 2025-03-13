@@ -9,7 +9,7 @@ public class TelaInicialPage {
     By botaoPratoXpath= By.xpath("(//item-card[contains(.,'Carbonara Coco Bambu')])[1]");
 
     public void clicarBotaoPrato() {
-        Utils.driver.findElement(botaoPratoXpath).click();
+        Utils.esperaElementoSerVisivel(botaoPratoXpath).click();
     }
 
 }

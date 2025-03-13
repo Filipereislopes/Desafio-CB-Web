@@ -13,7 +13,7 @@ public class Hooks {
         }
 
         @After
-        public void finalizarTeste() {
+        public void finalizarTeste() throws InterruptedException {
             captureElementScreenshot(driver,"PrintTela");
             driver.quit();
         }

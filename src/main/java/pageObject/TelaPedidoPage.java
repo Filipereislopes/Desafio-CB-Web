@@ -8,55 +8,54 @@ public class TelaPedidoPage {
 
     TelaInicialPage ti = new TelaInicialPage();
 
-    By campoObservacaoXpath= By.xpath("//textarea");
+    By campoObservacaoXpath= By.xpath("//form/textarea");
     By botaoAdicionarXpath= By.xpath("//button[@class='ng-star-inserted']");
     By textSacolaXpath= By.xpath("//span[contains(.,'Sacola')]");
     By botaoNovoCartaoXpath= By.xpath("//button[@class='add-button ng-star-inserted']");
     By botaoCartaoCreditoXpath= By.xpath("//payment-authorizartion");
     By botaoConfirmarPedidoXpath= By.xpath("//button[@class='confirm-order-button']");
-    By botaoConfirmarFazerPedidoXpath= By.xpath("//button[@class='confirm-button ng-star-inserted']");
+    By botaoConfirmarFazerPedidoXpath= By.xpath("//button/span[contains(.,'CONFIRMAR E FAZER PEDIDO')]");
     By pedidoRealizadoXpath= By.xpath("//span[@class='forecast-time']");
 
     public void confirmacaoPedidoRealizado(){
-        assertTrue(Utils.driver.findElement(pedidoRealizadoXpath).isDisplayed());
+        assertTrue(Utils.esperaElementoSerVisivel(pedidoRealizadoXpath).isDisplayed());
     }
 
     public void clicarConfirmarfazerPedido() throws InterruptedException {
-        Utils.esperaElemento(1000);
-        Utils.driver.findElement(botaoConfirmarFazerPedidoXpath).click();
+        Thread.sleep(1000);
+        Utils.esperaElementoSerClicavel(botaoConfirmarFazerPedidoXpath).click();
     }
 
-    public void  clicarConfirmarPedido() throws InterruptedException {
-        Utils.esperaElemento(2500);
-        Utils.driver.findElement(botaoConfirmarPedidoXpath).click();
+    public void  clicarConfirmarPedido(){
+        Utils.esperarPaginaCarregar();
+        Utils.esperaElementoLoop(botaoConfirmarPedidoXpath,3).click();
     }
 
-    public void clicarNovoCartao() throws InterruptedException {
-        Utils.esperaElemento(1000);
-        Utils.driver.findElement(botaoNovoCartaoXpath).click();
-        Utils.driver.findElement(botaoCartaoCreditoXpath).click();
+    public void clicarNovoCartao(){
+        Utils.esperaElementoSerVisivel(botaoNovoCartaoXpath).click();
+        Utils.esperaElementoSerVisivel(botaoCartaoCreditoXpath).click();
     }
 
     public void clicarBotaoTipoPagemento(){
-        Utils.driver.findElement(botaoConfirmarPedidoXpath).click();
+        Utils.esperaElementoSerVisivel(botaoConfirmarPedidoXpath).click();
     }
 
     public void sacolaComPrato(){
-        assertTrue(Utils.driver.findElement(textSacolaXpath).isDisplayed());
+        assertTrue(Utils.esperaElementoSerVisivel(textSacolaXpath).isDisplayed());
     }
 
     public void clicarBotaoAdicionar(){
-        Utils.driver.findElement(botaoAdicionarXpath).click();
+        Utils.esperaElementoSerClicavel(botaoAdicionarXpath).click();
     }
 
-    public void escreverObservacao(String text) throws InterruptedException {
-        Utils.esperaElemento(1000);
-        Utils.driver.findElement(campoObservacaoXpath).sendKeys(text);
+    public void escreverObservacao(String text){
+        Utils.esperarPaginaCarregar();
+        Utils.esperaElementoSerClicavel(campoObservacaoXpath).sendKeys(text);
     }
 
-    public void pedidoCompleto() throws InterruptedException {
+    public void pedidoCompleto(){
+        Utils.esperarPaginaCarregar();
         ti.clicarBotaoPrato();
-        Utils.esperaElemento(2000);
         clicarBotaoAdicionar();
     }
 

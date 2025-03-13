@@ -17,7 +17,7 @@ public class DesafioCBStep {
     TelaTipoPagamentoPage ttp = new TelaTipoPagamentoPage();
 
     @Dado("que o usuario esteja logado")
-    public void queOUsuarioEstejaLogado() throws InterruptedException {
+    public void queOUsuarioEstejaLogado(){
         tl.fazerLogin();
     }
 
@@ -27,7 +27,7 @@ public class DesafioCBStep {
     }
 
     @Quando("digitar uma observacao {string}")
-    public void digitarUmaObservacao(String string) throws InterruptedException {
+    public void digitarUmaObservacao(String string){
         tp.escreverObservacao(string);
     }
 
@@ -42,7 +42,7 @@ public class DesafioCBStep {
     }
 
     @Quando("o usuario adicionar um prato na sacola")
-    public void oUsuarioAdicionarUmPratoNaSacola() throws InterruptedException {
+    public void oUsuarioAdicionarUmPratoNaSacola(){
         tp.pedidoCompleto();
     }
 
@@ -52,7 +52,7 @@ public class DesafioCBStep {
     }
 
     @Quando("clicar no botao adicionar novo cartao")
-    public void clicarNoBotaoAdicionarNovoCartao() throws InterruptedException {
+    public void clicarNoBotaoAdicionarNovoCartao(){
         tp.clicarNovoCartao();
     }
 
@@ -73,12 +73,12 @@ public class DesafioCBStep {
 
 
     @E("clicar no botao selecionar forma de pagamento")
-    public void clicarNoBotaoSelecionarFormaDePagamento() throws InterruptedException {
+    public void clicarNoBotaoSelecionarFormaDePagamento(){
         tp.clicarConfirmarPedido();
     }
 
     @E("clicar em confirmar pedido")
-    public void clicarEmConfirmarPedido() throws InterruptedException {
+    public void clicarEmConfirmarPedido(){
         tp.clicarConfirmarPedido();
     }
 
@@ -93,7 +93,7 @@ public class DesafioCBStep {
     }
 
     @E("clicar no botao de pagamento na entraga")
-    public void clicarNoBotaoDePagamentoNaEntraga() throws InterruptedException {
+    public void clicarNoBotaoDePagamentoNaEntraga(){
         ttp.clicarPagNaEntrega();
     }
 

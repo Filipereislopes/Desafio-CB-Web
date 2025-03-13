@@ -18,28 +18,27 @@ public class TelaTipoPagamentoPage {
     By tipoPagTicketXpath= By.xpath("//payment-types-item[contains(.,'Ticket Refeição')]");
 
     public void clicarCartaoTicket(){
-        Utils.driver.findElement(tipoPagTicketXpath).click();
+        Utils.esperaElementoSerVisivel(tipoPagTicketXpath).click();
     }
 
-    public void clicarPagNaEntrega() throws InterruptedException {
-        Utils.esperaElemento(1000);
-        Utils.driver.findElement(botaoPagNaEntregaXpath).click();
+    public void clicarPagNaEntrega(){
+        Utils.esperaElementoSerVisivel(botaoPagNaEntregaXpath).click();
 
     }
     public void preencherNovoCartao(){
-        Utils.driver.findElement(campoNumeroCartaoXpath).sendKeys("5566954754080284");
-        Utils.driver.findElement(campoDataCartaoXpath).sendKeys("0826");
-        Utils.driver.findElement(campoNumSegurancaCartaoXpath).sendKeys("962");
-        Utils.driver.findElement(campoNomeImpressoCartaoXpath).sendKeys("Teste DesafioCB");
-        Utils.driver.findElement(campoCPFCartaoXpath).sendKeys("60866539174");
+        Utils.esperaElementoSerVisivel(campoNumeroCartaoXpath).sendKeys("5566954754080284");
+        Utils.esperaElementoSerVisivel(campoDataCartaoXpath).sendKeys("0826");
+        Utils.esperaElementoSerVisivel(campoNumSegurancaCartaoXpath).sendKeys("962");
+        Utils.esperaElementoSerVisivel(campoNomeImpressoCartaoXpath).sendKeys("Teste DesafioCB");
+        Utils.esperaElementoSerVisivel(campoCPFCartaoXpath).sendKeys("60866539174");
     }
 
     public void clicarSalvarNovoCartao(){
-        Utils.driver.findElement(botaoSalvarNovoCartaoXpath).click();
+        Utils.esperaElementoSerVisivel(botaoSalvarNovoCartaoXpath).click();
     }
 
     public void confirmacaoCartaoNovo(){
-        assertTrue(Utils.driver.findElement(verificacaoCartaoXpath).isDisplayed());
+        assertTrue(Utils.esperaElementoSerVisivel(verificacaoCartaoXpath).isDisplayed());
     }
 
 }
